@@ -1,0 +1,16 @@
+{
+  "model": {
+    "title": "模型",
+    "no-set": "未设置"
+  },
+  "button": {
+    "history": "历史",
+    "open": "打开",
+    "save": "保存"
+  },
+  "languages": {
+    "ja": "日本語",
+    "en": "English",
+    "zh-Hans": "简体中文"
+  }
+}
