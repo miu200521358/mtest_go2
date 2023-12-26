@@ -9,11 +9,31 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
 import { useI18n } from "vue-i18n";
+import { LoadConfig, SaveConfig } from "@/wailsjs/go/main/App";
 
 const { t, availableLocales: languages, locale } = useI18n();
 
 const onchangeLanguageHandle = (item: string) => {
-    item !== locale.value ? (locale.value = item) : false;
+    console.log(item);
+    if (item !== locale.value) {
+        locale.value = item;
+        SaveConfig("locale", [item], 1);
+    }
 };
+
+onMounted(() => {
+    onMounted(async () => {
+        const savedLocale = await LoadConfig("locale");
+        if (savedLocale) {
+            locale.value = savedLocale[0];
+        }
+    });
+});
 </script>
+
+
+
+
+

@@ -1,4 +1,4 @@
-module changeme
+module miu200521358/mlib_go
 
 go 1.21
 
