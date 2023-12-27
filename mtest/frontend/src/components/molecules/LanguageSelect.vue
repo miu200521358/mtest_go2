@@ -21,16 +21,11 @@ const onchangeLanguageHandle = (item: string) => {
 };
 
 
-onMounted(() => {
-    console.log("onMounted 1");
-    onMounted(async () => {
-        console.log("onMounted 2");
-        const savedLocales = await LoadConfig("locale");
-        console.log("savedLocales", savedLocales);
-        if (savedLocales) {
-            locale.value = savedLocales[0];
-        }
-    });
+onMounted(async () => {
+    const savedLocales = await LoadConfig("locale");
+    if (savedLocales) {
+        locale.value = savedLocales[0];
+    }
 });
 
 </script>

@@ -85,5 +85,26 @@ func (a *App) LoadConfig(key string) []string {
 		return []string{}
 	}
 
-	return config[key].([]string)
+	// Check if the value is nil and initialize it as an empty slice of strings
+	if config[key] == nil {
+		return []string{}
+	}
+
+	// Convert the interface{} type to []interface{}
+	values, ok := config[key].([]interface{})
+	if !ok {
+		return []string{}
+	}
+
+	// Convert each element to string
+	result := make([]string, len(values))
+	for i, v := range values {
+		if str, ok := v.(string); ok {
+			result[i] = str
+		} else {
+			return []string{}
+		}
+	}
+
+	return result
 }
