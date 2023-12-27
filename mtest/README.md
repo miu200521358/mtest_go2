@@ -1,19 +1,20 @@
 # README
 
-## About
+## 新規作成
 
-This is the official Wails Vue-TS template.
+```
+wails init -n mtest -t vue-ts -ide vscode
+wails dev -assetdir ./frontend/dist -wailsjsdir ./frontend/src -reloaddirs ./frontend/src/views,./frontend/src/i18n/locales -save
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+npm install --save quasar @quasar/extras
+npm install --save-dev @quasar/vite-plugin sass@^1.33.0
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npm install -D @vue/tsconfig
+npm install vue-i18n@9
+```
 
-## Live Development
+# ビルド
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
-
-## Building
-
-To build a redistributable, production mode package, use `wails build`.
+```
+wails build -v 2 -trimpath -clean -o mtest.exe
+```

@@ -38,7 +38,7 @@
   "obfuscated": false,
   "outputfilename": "mtest.exe",
   "OutputType": "",
-  "Platform": "windows/arm64",
+  "Platform": "windows/amd64",
   "postBuildHooks": null,
   "preBuildHooks": null,
   "projectdir": "C:\\MMD\\mlib_go\\mtest",

@@ -45,4 +45,4 @@ yarn-error.log*
 config.json
 built/
 dist/
-
+package-lock.json

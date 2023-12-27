@@ -46,17 +46,23 @@ func (a *App) SaveConfig(key string, values []string, limit int) error {
 		config[key] = []string{}
 	}
 
-	// Convert the interface{} type to []string
-	existingValues, ok := config[key].([]string)
+	// Convert the interface{} type to []interface{}
+	existingValues, ok := config[key].([]interface{})
 	if !ok {
-		return fmt.Errorf("unexpected type for config[%s]", key)
+		existingValues = make([]interface{}, 0)
+	}
+
+	// Convert each element to string
+	existingValuesStrList := make([]string, len(existingValues))
+	for i, v := range existingValues {
+		existingValuesStrList[i] = fmt.Sprintf("%v", v)
 	}
 
 	// Add key-value elements to the config map
-	config[key] = append(values, existingValues...)[:limit]
+	config[key] = append(values, existingValuesStrList...)[:limit]
 
-	// Marshal the updated config map back to JSON
-	updatedData, err := json.MarshalIndent(config, "", "")
+	// Create a JSON representation of the config map without newlines and indentation
+	updatedData, err := json.Marshal(config)
 	if err != nil {
 		return err
 	}
