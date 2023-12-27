@@ -16,5 +16,6 @@ npm install vue-i18n@9
 # ビルド
 
 ```
-wails build -v 2 -trimpath -clean -o mtest.exe
+wails build -trimpath -clean -o mtest_1.00.00_β06.exe
+wails build -trimpath -o mtest_1.00.00_β07.exe
 ```
