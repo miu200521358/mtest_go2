@@ -16,21 +16,23 @@ import { LoadConfig, SaveConfig } from "@/wailsjs/go/main/App";
 const { t, availableLocales: languages, locale } = useI18n();
 
 const onchangeLanguageHandle = (item: string) => {
-    console.log(item);
-    if (item !== locale.value) {
-        locale.value = item;
-        SaveConfig("locale", [item], 1);
-    }
+    locale.value = item;
+    SaveConfig("locale", [item], 1);
 };
 
+
 onMounted(() => {
+    console.log("onMounted 1");
     onMounted(async () => {
-        const savedLocale = await LoadConfig("locale");
-        if (savedLocale) {
-            locale.value = savedLocale[0];
+        console.log("onMounted 2");
+        const savedLocales = await LoadConfig("locale");
+        console.log("savedLocales", savedLocales);
+        if (savedLocales) {
+            locale.value = savedLocales[0];
         }
     });
 });
+
 </script>
 
 

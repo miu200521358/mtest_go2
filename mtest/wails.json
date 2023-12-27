@@ -1,49 +1,49 @@
 {
-  "name": "mtest",
+  "appargs": "",
   "assetdir": "./frontend/dist",
-  "reloaddirs": "./frontend/src/views,./frontend/src/i18n/locales",
+  "Author": {
+    "email": "38824651+miu200521358@users.noreply.github.com",
+    "name": "miu"
+  },
+  "bindings": {
+    "ts_generation": {
+      "outputType": "",
+      "prefix": "",
+      "suffix": ""
+    }
+  },
+  "build:dir": "build",
+  "debounceMS": 100,
+  "devServer": "localhost:34115",
   "frontend:build": "npm run build",
-  "frontend:install": "npm install",
   "frontend:dev": "",
   "frontend:dev:build": "",
   "frontend:dev:install": "",
-  "frontend:dev:watcher": "npm run dev",
   "frontend:dev:serverUrl": "auto",
-  "wailsjsdir": "./frontend/src",
-  "version": "2",
-  "projectdir": "C:\\MMD\\mlib_go\\mtest",
-  "build:dir": "build",
-  "outputfilename": "mtest.exe",
-  "OutputType": "",
-  "Platform": "",
-  "runNonNativeBuildHooks": false,
-  "postBuildHooks": null,
-  "preBuildHooks": null,
-  "Author": {
-    "name": "miu",
-    "email": "38824651+miu200521358@users.noreply.github.com"
-  },
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dir": "frontend",
+  "frontend:install": "npm install",
+  "garbleargs": "",
   "Info": {
+    "comments": "Built using Wails (https://wails.io)",
     "companyName": "mtest",
+    "copyright": "Copyright.........",
+    "fileAssociations": null,
     "productName": "mtest",
     "productVersion": "1.0.0",
-    "copyright": "Copyright.........",
-    "comments": "Built using Wails (https://wails.io)",
-    "fileAssociations": null,
     "protocols": null
   },
-  "debounceMS": 100,
-  "devServer": "localhost:34115",
-  "appargs": "",
+  "name": "mtest",
   "nsisType": "multiple",
   "obfuscated": false,
-  "garbleargs": "",
-  "frontend:dir": "frontend",
-  "bindings": {
-    "ts_generation": {
-      "prefix": "",
-      "suffix": "",
-      "outputType": ""
-    }
-  }
+  "outputfilename": "mtest.exe",
+  "OutputType": "",
+  "Platform": "windows/arm64",
+  "postBuildHooks": null,
+  "preBuildHooks": null,
+  "projectdir": "C:\\MMD\\mlib_go\\mtest",
+  "reloaddirs": "./frontend/src/views,./frontend/src/i18n/locales",
+  "runNonNativeBuildHooks": false,
+  "version": "2",
+  "wailsjsdir": "./frontend/src"
 }
